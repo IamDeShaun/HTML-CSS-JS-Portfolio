@@ -1,2 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+.sass-cache/*
+.sass-cache
+.sass-cache/
+*.css.map
