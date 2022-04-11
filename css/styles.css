@@ -1,0 +1,242 @@
+/*------------------------------------*\
+    $VARIABLES
+\*------------------------------------*/
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+/* CSS Transition
+	Usage: @include transition(width,0.3s,ease-out);
+ */
+/* Rem Unit font sizes with relative fallback http:/seesparkbox.com/foundry/scss_rem_mixin_now_with_a_better_fallback  
+	Usage: @include font-size(1, large);
+*/
+/*------------------------------------*\
+    $RESET
+\*------------------------------------*/
+/* Border-Box  */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, ol, ul, li, form, legend, label, table, header, footer, nav, section, figure {
+  margin: 0;
+  padding: 0; }
+
+header, footer, nav, section, article, hgroup, figure {
+  display: block; }
+
+/*------------------------------------*\
+    $GLOBAL ELEMENTS
+\*------------------------------------*/
+a {
+  text-decoration: none;
+  outline: 0; }
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
+
+body {
+  font-family: "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  margin: 0;
+  padding: 0; }
+
+/*------------------------------------*\
+    $PAGE STRUCTURE
+\*------------------------------------*/
+nav {
+  background: #fff;
+  float: right;
+  order: 1; }
+  nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex; }
+    nav ul li {
+      list-style: none;
+      position: relative; }
+      nav ul li.sub-menu:before {
+        content: '\f107';
+        font-family: FontAwesome;
+        position: absolute;
+        line-height: 50px;
+        color: #363436;
+        right: 5px; }
+      nav ul li.active.sub-menu:before {
+        content: '\f106'; }
+      nav ul li ul {
+        position: absolute;
+        left: 0;
+        background: #20ddae;
+        display: none; }
+        nav ul li ul li {
+          display: block;
+          width: 200px; }
+          nav ul li ul li a {
+            color: #fff;
+            display: block; }
+            nav ul li ul li a:hover {
+              color: #fff;
+              background: #19b08a; }
+      nav ul li a {
+        height: 50px;
+        font-size: .75rem;
+        line-height: 50px;
+        padding: 0 20px;
+        color: #363436;
+        text-decoration: none;
+        text-transform: uppercase; }
+        nav ul li a:hover, nav ul li a.active {
+          color: #20ddae;
+          transition: all .5s ease-in-out; }
+      nav ul li.active ul {
+        display: block !important; }
+        nav ul li.active ul li a {
+          border-bottom: 1px solid #19b08a; }
+
+/* Mobile Menu */
+.mobile-menu ul {
+  background: #20ddae; }
+  .mobile-menu ul ul li a {
+    color: #fff; }
+
+header {
+  background: #fff;
+  border-bottom: 1px solid #efefef;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly; }
+  header .logo {
+    height: 50px;
+    line-height: 50px;
+    font-size: 1rem;
+    margin-right: auto;
+    text-transform: uppercase;
+    font-weight: 500;
+    order: 0; }
+    header .logo a {
+      color: #363436; }
+      header .logo a:hover {
+        /*text-decoration: underline;*/
+        color: #20ddae;
+        transition: .5s; }
+  header .search {
+    padding: 0px 20px;
+    float: right;
+    line-height: 50px;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    order: 2; }
+    header .search i.fas.fa-search {
+      color: #363436;
+      display: block; }
+  header .search-box:before {
+    content: "";
+    position: absolute;
+    top: -32px;
+    right: 13px;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 14px solid transparent;
+    border-bottom: 14px solid #20ddae; }
+  header .search-box {
+    background: #fff;
+    position: absolute;
+    top: 36px;
+    right: 0%;
+    width: 350px;
+    height: 80px;
+    line-height: 80px;
+    border-top: 4px solid #20ddae;
+    display: none; }
+  header .search-box input[type="text"] {
+    width: 200px;
+    padding: 10px 10px;
+    margin-left: 23px;
+    border: 1px solid #20ddae;
+    outline: none; }
+  header .search-box input[type="button"] {
+    width: 80px;
+    padding: 10px 0;
+    background: #20ddae;
+    color: #fff;
+    margin-left: -6px;
+    border: 1px solid #20ddae;
+    outline: none;
+    cursor: pointer; }
+  header .menu-toggle {
+    background: transparent;
+    float: right;
+    line-height: 50px;
+    cursor: pointer;
+    display: none; }
+
+@media (max-width: 1080px) {
+  header {
+    padding: 0 20px;
+    justify-content: space-evenly;
+    align-items: center; }
+    header .menu-toggle {
+      order: 2 !important; }
+    header .searchbar {
+      display: none; }
+    header .search {
+      order: 1;
+      z-index: 2; }
+    header .search-box {
+      width: 270px;
+      right: -16%; }
+    header .search-box input[type="text"] {
+      width: 140px;
+      margin-left: 15px; }
+    header .search-box input[type="button"] {
+      margin-right: 12px; }
+    header .logo {
+      font-size: 1.2rem;
+      margin-right: auto;
+      order: 0; }
+    header nav ul li.sub-menu::before {
+      right: 20px;
+      color: #ffffff !important; }
+    header nav {
+      position: absolute;
+      width: 100%;
+      height: calc(100vh - 50px);
+      top: 50px;
+      left: -100%;
+      background: #20ddae;
+      transition: 0.5s; }
+      header nav.active {
+        left: 0; }
+      header nav ul {
+        display: block;
+        text-align: center; }
+      header nav a {
+        color: #fff !important;
+        display: block;
+        border-bottom: 1px solid #19b08a;
+        font-size: 1rem !important; }
+        header nav a:hover, header nav a.active {
+          background: #19b08a; }
+    header .menu-toggle {
+      display: block;
+      order: 3; }
+      header .menu-toggle i.fas {
+        color: #363436; }
+    header nav ul li.active ul {
+      position: relative; }
+
+  nav ul li ul li {
+    width: 100%;
+    background: #19b08a;
+    border-bottom: 1px solid #148065; } }
+
+/*# sourceMappingURL=styles.css.map */

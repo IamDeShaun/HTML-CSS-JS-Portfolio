@@ -1,0 +1,16 @@
+@import "scss/generic/variables.scss";
+@import "scss/generic/mixins.scss";
+@import "scss/generic/reset.scss";
+
+/*------------------------------------*\
+    $GLOBAL ELEMENTS
+\*------------------------------------*/
+@import "scss/base/links.scss";
+@import "scss/base/basic.scss";
+
+/*------------------------------------*\
+    $PAGE STRUCTURE
+\*------------------------------------*/
+@import "scss/object/nav.scss";
+@import "scss/object/header.scss";
+
