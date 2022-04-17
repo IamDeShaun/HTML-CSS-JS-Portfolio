@@ -58,7 +58,8 @@ nav{
           color: #363436;
           text-decoration: none;
           text-transform: uppercase;
-  
+          font-weight:700;
+          
           &:hover, &.active {
             color:#20ddae;
             transition: all .5s ease-in-out;
