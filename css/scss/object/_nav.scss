@@ -52,14 +52,14 @@ nav{
   
         a {
           height: 50px;
-          font-size: .75rem;
+          font-size: 1rem;
           line-height: 50px;
           padding: 0 20px;
           color: #363436;
           text-decoration: none;
           text-transform: uppercase;
           font-weight:700;
-          
+
           &:hover, &.active {
             color:#20ddae;
             transition: all .5s ease-in-out;
