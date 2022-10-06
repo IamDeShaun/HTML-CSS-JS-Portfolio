@@ -12,7 +12,7 @@
 .main-footer__upper {
     display: flex;
     justify-content: space-between;
-    padding: 8rem 0;
+    padding: 3rem 0;
 }
 
 .main-footer__row-1 {
@@ -32,9 +32,9 @@
 }
 
 .main-footer__short-desc {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     color: #eee;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     line-height: 1.7;
 }
 
@@ -47,7 +47,7 @@
     text-align: center;
 }
 .heading-sm {
-    font-size: 2.2rem;
+    font-size: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -57,7 +57,7 @@
 }
 
 .main-footer__lower {
-    padding: 4rem 0;
+    padding: 2rem 0;
     border-top: 1px solid #444;
     color: #eee;
     font-size: 1.2rem;

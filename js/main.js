@@ -10,3 +10,4 @@ searchIcon.addEventListener('click', function () {
     searchBox.style.pointerEvents = 'auto';
   }
 });
+
